@@ -1,0 +1,42 @@
+<div class="container-fluid">
+      <div class="row myRow justify-content-center">
+            <div class="col-lg-5 myCol">
+                  <div class="row chart">
+                        <canvas baseChart [datasets]="chartDataCases" [labels]="chartLabels" [options]="chartOptions"
+                              [legend]="chartLegend" [chartType]="chart">
+
+                        </canvas>
+                  </div>
+                  <div class="row chart">
+                        <canvas baseChart [datasets]="chartDataDeaths" [labels]="chartLabels" [options]="chartOptions"
+                              [legend]="chartLegend" [chartType]="chart">
+
+                        </canvas>
+                  </div>
+            </div>
+            <div class="col-lg-6 myCol">
+                  <div class="row statRow align-items-center">
+                        <div class="col-xl">
+                              <div class="cases stats">
+                                    <div class="all">Cases: {{data.Global.TotalConfirmed.toLocaleString()}}</div>
+                                    <div class="today"> Today: {{data.Global.NewConfirmed.toLocaleString()}}</div>
+                              </div>
+
+                        </div>
+                        <div class="col-xl">
+                              <div class="cured stats">
+                                    <div class="all">Cured: {{data.Global.TotalRecovered.toLocaleString()}}</div>
+                                    <div class="today">Today: {{data.Global.NewRecovered.toLocaleString()}}</div>
+                              </div>
+                        </div>
+                        <div class="col-xl">
+                              <div class="dead stats">
+                                    <div class="all">Dead: {{data.Global.TotalDeaths.toLocaleString()}}</div>
+                                    <div class="today">Today: {{data.Global.NewDeaths.toLocaleString()}}</div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>
+<button (click)="test()">ESSA</button>

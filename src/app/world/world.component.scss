@@ -1,0 +1,57 @@
+
+
+.container{
+      padding-top: 20px;
+}
+
+.myCol{
+}
+
+.myRow{
+      height: 70vh;
+      margin-top: 20px;
+}
+
+.statRow{
+      height: 100%
+}
+
+.stats{
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+}
+
+.stats .all{
+      font-size: 1.5em;
+      padding: 10px 0;
+}
+
+.cases{
+      color: rgb(231, 165, 22);
+      .today{
+            color:rgb(214, 188, 132);
+      }
+}
+
+.cured{
+      color: rgb(39, 219, 33);
+      .today{
+            color:rgb(135, 211, 132);
+      }
+}
+
+.dead{
+      color: rgb(231, 81, 22);
+      .today{
+            color:rgb(218, 146, 116);
+      }
+}
+
+.chart {
+      display: flex;
+      height: 50%;
+      justify-content: center;
+      align-items: center;
+}

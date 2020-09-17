@@ -1,0 +1,20 @@
+
+
+.col{
+      max-height: 70vh;
+}
+
+.dataTable{
+      overflow-y: scroll;
+      max-height: 70vh;
+}
+
+.chart{
+      min-height: 50vh;
+      width: 100%;
+}
+
+.chartContainer{
+      display: flex;
+      align-items: center;
+}
