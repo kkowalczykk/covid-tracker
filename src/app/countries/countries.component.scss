@@ -4,17 +4,89 @@
       max-height: 70vh;
 }
 
+.input-group-text{
+      background-color: #c8cacc;
+}
+
 .dataTable{
       overflow-y: scroll;
       max-height: 70vh;
 }
 
+.dataTable::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #575757;
+}
+
+.dataTable::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #575757;
+}
+
+.dataTable::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #33343b;
+}
+
 .chart{
-      min-height: 50vh;
+
       width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      @media (max-width: 500px){
+            width: 120vw;
+      }
+            
 }
 
 .chartContainer{
       display: flex;
       align-items: center;
+      
+      @media (max-width: 500px){
+            overflow-x: scroll;
+            padding: 0;
+      }
+}
+
+span.todayConfirmed{
+      color: cyan;
+      font-size: 0.9em;
+      &:before{
+            content: '(+';
+      }
+
+      &:after{
+            content: ')'
+      }
+}
+
+span.todayRecovered{
+      color: lawngreen;
+      font-size: 0.9em;
+      &:before{
+            content: '(+';
+      }
+
+      &:after{
+            content: ')'
+      }
+}
+
+span.todayDeaths{
+      color: tomato;;
+      font-size: 0.9em;
+      &:before{
+            content: '(+';
+      }
+
+      &:after{
+            content: ')'
+      }
 }

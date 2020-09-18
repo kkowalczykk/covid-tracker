@@ -13,8 +13,8 @@ export class CountriesComponent implements OnInit {
   countries: any[] = [];
   countryData: any[] = [];
   public dataChart = [
-    { data: [], label: 'Confirmed', borderColor: ['rgb(0,200,230)'], fill: false, backgroundColor: ['rgba(0,200,230,0.5)'], pointBackgroundColor: 'rgb(0,200,230)', yAxisID: 'A', },
-    { data: [], label: 'Recovered', borderColor: ['rgb(0,240,100)'], fill: false, backgroundColor: ['rgba(0,240,100,0.5)'], pointBackgroundColor: 'rgb(0,240,100)', yAxisID: 'A', },
+    { data: [], label: 'Confirmed', borderColor: ['rgb(0,200,230)'], fill: false, backgroundColor: ['rgba(0,200,230,0.5)'], pointBackgroundColor: 'rgb(0,200,230)', yAxisID: 'A', pointRadius: 2, pointHoverRadius: 2 },
+    { data: [], label: 'Recovered', borderColor: ['rgb(0,240,100)'], fill: false, backgroundColor: ['rgba(0,240,100,0.5)'], pointBackgroundColor: 'rgb(0,240,100)', yAxisID: 'A', pointRadius: 2, pointHoverRadius: 2 },
     { data: [], label: 'Deaths', type: 'bar', backgroundColor: 'rgba(230,40,40,0.5)', borderColor: ['rgb(0,240,100)'], yAxisID: 'Deaths', fill: true },
   ]
 
@@ -68,9 +68,7 @@ export class CountriesComponent implements OnInit {
   public chart = "line";
 
 
-  test() {
-    console.log(this.dataChart);
-  }
+
   change() {
     this.countryData = [];
     this.dataChart[0].data = [];
@@ -99,7 +97,6 @@ export class CountriesComponent implements OnInit {
         this.countries.push([data[i].Country, data[i].Slug])
       }
       this.countries.sort();
-      console.log(this.countries);
       this.selectedCountry = ['poland'];
       this.dataService.getCountryCases(this.selectedCountry).subscribe((data: any[]) => {
         this.countryData = data;

@@ -1,19 +1,25 @@
 <div class="container-fluid">
-      <div class="row justify-content-center m-5">
-            <div class="col col-6">
-                  <select (change)="change()" class="form-control" name="country" id="country"
-                        [(ngModel)]="selectedCountry">
-                        <option *ngFor="let country of countries" [value]="country[1]">{{country[0]}}
-                        </option>
-                  </select>
+      <div class="row justify-content-center mb-5 mt-5">
+            <div class="col-11 col-md-6 selectCountry">
+                  <div class="input-group">
+                        <div class="input-group-prepend">
+                              <label for="country" class="input-group-text">Select country:</label>
+                        </div>
+                        <select (change)="change()" class="form-control" name="country" id="country"
+                              [(ngModel)]="selectedCountry">
+                              <option *ngFor="let country of countries" [value]="country[1]">{{country[0]}}
+                              </option>
+                        </select>
+                  </div>
+
             </div>
       </div>
       <div class="row justify-content-center">
-            <div class="col col-xl text-center">
+            <div class="col-xl-6 text-center order-2 order-xl-1">
                   <div class="dataTable">
                         <table class="table table-dark">
                               <thead>
-                                    <tr>
+                                    <tr class="bg-info">
                                           <th class="th">Date</th>
                                           <th class="th">Confirmed</th>
                                           <th class="th">Recovered</th>
@@ -22,16 +28,22 @@
                               </thead>
                               <tbody>
                                     <tr *ngFor="let daily of countryData.slice().reverse(); index as id;">
-                                          <td>{{daily.Date}}</td>
-                                          <td>{{daily.Confirmed}}</td>
-                                          <td>{{daily.Recovered}}</td>
-                                          <td>{{daily.Deaths}}</td>
+                                          <td>{{daily.Date.slice(0,10)}}</td>
+                                          <td>{{daily.Confirmed}} <span
+                                                      class="todayConfirmed">{{daily.Confirmed - countryData.slice().reverse()[id+1].Confirmed}}</span>
+                                          </td>
+                                          <td>{{daily.Recovered}} <span
+                                                      class="todayRecovered">{{daily.Recovered - countryData.slice().reverse()[id+1].Recovered}}</span>
+                                          </td>
+                                          <td>{{daily.Deaths}} <span
+                                                      class="todayDeaths">{{daily.Deaths - countryData.slice().reverse()[id+1].Deaths}}</span>
+                                          </td>
                                     </tr>
                               </tbody>
                         </table>
                   </div>
             </div>
-            <div class="col col-xl text-center chartContainer">
+            <div class="col-xl-6 mb-5 mb-xl-0 text-center chartContainer order-1 order-xl-2">
                   <div class="chart">
                         <canvas baseChart [datasets]="dataChart" [labels]="chartLabels" [options]="chartOptions"
                               [legend]="chartLegend" [chartType]="chart">
@@ -41,4 +53,3 @@
             </div>
       </div>
 </div>
-<button (click)="test()">TEST</button>

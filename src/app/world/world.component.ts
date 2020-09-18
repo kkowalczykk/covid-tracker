@@ -44,11 +44,6 @@ export class WorldComponent implements OnInit {
   public chartLegend = true;
   public chart = "line";
 
-  test() {
-    console.log(this.chartDataCases);
-    console.log(this.chartLabels);
-    console.log(this.data);
-  }
 
   constructor(private dataService: DataService) { }
 
