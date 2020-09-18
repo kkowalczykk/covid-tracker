@@ -1,6 +1,8 @@
 # CovidTracker
+CovidTracker is an app which shows COVID-19 infection statistics. Data comes from [Covid19Api](https://api.covid19api.com/) and [Covid Mathdro Api](https://covid19.mathdro.id/api). Charts were created with chart.js. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+# Live
+You can check it live on [Github Pages](https://kkowalczykk.github.io/covid-tracker/)
 
 ## Development server
 
